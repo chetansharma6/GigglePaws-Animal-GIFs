@@ -5,6 +5,8 @@
 
 /* ----------------------------- Design tokens ---------------------------- */
 :root {
+  color-scheme: dark;
+
   --bg-0: #0b0a1f;
   --bg-1: #14102e;
 
@@ -60,8 +62,17 @@ body {
   min-height: 100vh;
   font-family: var(--font-body);
   color: var(--text);
-  background: radial-gradient(1200px 800px at 20% -10%, #241a52 0%, transparent 55%),
-    radial-gradient(1000px 700px at 100% 0%, #3a1150 0%, transparent 50%),
+  background:
+    radial-gradient(
+      1200px 800px at 20% -10%,
+      #241a52 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      1000px 700px at 100% 0%,
+      #3a1150 0%,
+      transparent 50%
+    ),
     linear-gradient(160deg, var(--bg-1), var(--bg-0));
   background-attachment: fixed;
   display: flex;
@@ -118,6 +129,7 @@ body {
   0% {
     transform: translate(0, 0) scale(1);
   }
+
   100% {
     transform: translate(40px, -30px) scale(1.15);
   }
@@ -158,9 +170,19 @@ body {
 }
 
 @keyframes wiggle {
-  0%, 90%, 100% { transform: rotate(0); }
-  93% { transform: rotate(-18deg); }
-  96% { transform: rotate(14deg); }
+  0%,
+  90%,
+  100% {
+    transform: rotate(0);
+  }
+
+  93% {
+    transform: rotate(-18deg);
+  }
+
+  96% {
+    transform: rotate(14deg);
+  }
 }
 
 .tagline {
@@ -189,6 +211,7 @@ body {
     opacity: 0;
     transform: translateY(14px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -247,9 +270,20 @@ body {
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-7px); }
-  40%, 80% { transform: translateX(7px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-7px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(7px);
+  }
 }
 
 .error {
@@ -271,7 +305,10 @@ body {
   padding: 0.75rem 1.4rem;
   cursor: pointer;
   color: #fff;
-  transition: transform 0.12s var(--ease), box-shadow 0.2s, opacity 0.2s,
+  transition:
+    transform 0.12s var(--ease),
+    box-shadow 0.2s,
+    opacity 0.2s,
     filter 0.2s;
   white-space: nowrap;
 }
@@ -326,6 +363,8 @@ body {
 .btn:focus-visible,
 .icon-btn:focus-visible,
 .chip:focus-visible,
+.link-btn:focus-visible,
+.fav-remove:focus-visible,
 #animal-input:focus-visible {
   outline: none;
   box-shadow: var(--ring);
@@ -362,7 +401,10 @@ body {
   border-radius: var(--radius-pill);
   padding: 0.45rem 0.9rem;
   cursor: pointer;
-  transition: transform 0.12s var(--ease), background 0.2s, border-color 0.2s;
+  transition:
+    transform 0.12s var(--ease),
+    background 0.2s,
+    border-color 0.2s;
 }
 
 .chip:hover {
@@ -429,14 +471,15 @@ body {
 }
 
 #gif-image {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   opacity: 0;
   transform: scale(0.98);
-  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  transition:
+    opacity 0.4s var(--ease),
+    transform 0.4s var(--ease);
 }
 
 #gif-image.loaded {
@@ -453,7 +496,9 @@ body {
   gap: 0.4rem;
   opacity: 0;
   transform: translateY(-6px);
-  transition: opacity 0.2s, transform 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
 }
 
 .gif-frame:hover .frame-actions,
@@ -474,7 +519,9 @@ body {
   color: #fff;
   cursor: pointer;
   backdrop-filter: blur(6px);
-  transition: transform 0.12s var(--ease), background 0.2s;
+  transition:
+    transform 0.12s var(--ease),
+    background 0.2s;
 }
 
 .icon-btn:hover {
@@ -513,8 +560,17 @@ body {
 }
 
 @keyframes bounce {
-  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
-  40% { transform: scale(1); opacity: 1; }
+  0%,
+  80%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Notice */
@@ -578,7 +634,9 @@ body {
   border: 2px solid transparent;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.3);
-  transition: transform 0.12s var(--ease), border-color 0.2s;
+  transition:
+    transform 0.12s var(--ease),
+    border-color 0.2s;
 }
 
 .thumb img {
@@ -657,7 +715,9 @@ body {
   overflow: hidden;
   border: 2px solid transparent;
   background: rgba(0, 0, 0, 0.3);
-  transition: transform 0.12s var(--ease), border-color 0.2s;
+  transition:
+    transform 0.12s var(--ease),
+    border-color 0.2s;
 }
 
 .fav-item img {
@@ -692,7 +752,10 @@ body {
   color: #fff;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.2s, background 0.2s, transform 0.12s var(--ease);
+  transition:
+    opacity 0.2s,
+    background 0.2s,
+    transform 0.12s var(--ease);
 }
 
 .fav-item:hover .fav-remove,
@@ -752,7 +815,9 @@ kbd {
   font-weight: 500;
   box-shadow: var(--shadow-md);
   backdrop-filter: blur(10px);
-  transition: transform 0.35s var(--ease), opacity 0.35s;
+  transition:
+    transform 0.35s var(--ease),
+    opacity 0.35s;
   opacity: 0;
   z-index: 50;
 }
@@ -772,13 +837,60 @@ kbd {
   .controls .btn {
     flex: 1 1 100%;
   }
+
   .gif-frame {
     aspect-ratio: 1 / 1;
+  }
+
+  .search-box {
+    flex-wrap: wrap;
+    border-radius: var(--radius-sm);
+    padding: 0.5rem;
+  }
+
+  .search-icon {
+    padding-left: 0.25rem;
+  }
+
+  #animal-input {
+    min-width: 0;
+  }
+
+  .search-box .btn {
+    width: 100%;
+  }
+
+  .gif-topbar {
+    align-items: flex-start;
+  }
+
+  .gif-title {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .counter {
+    flex-shrink: 0;
+  }
+
+  .frame-actions {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
   }
 }
 
 /* ------------------------- Reduced motion ------------------------------- */
 @media (prefers-reduced-motion: reduce) {
+  .orb,
+  .logo-emoji {
+    animation: none !important;
+  }
+
   *,
   *::before,
   *::after {
@@ -786,6 +898,7 @@ kbd {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+
   #gif-image {
     opacity: 1;
     transform: none;
